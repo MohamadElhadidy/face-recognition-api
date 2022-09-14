@@ -44,5 +44,5 @@ app.put("/image", image.handleImage(db))
 app.post("/imageURL", image.handleApiCall)
 
 
-app.listen(env.SERVER_PORT)
+app.listen(env.SERVER_PORT,'localhost')
 
