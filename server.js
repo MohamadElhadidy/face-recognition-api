@@ -26,7 +26,7 @@ app.use(cors())
 app.use(express.json())
 
 app.get("/", (req, res)=>{
-     res.json(user)
+     res.json('Server Is running')
 })
 
 app.post("/signin", signIn.handleSignIn(db, bcrypt))
