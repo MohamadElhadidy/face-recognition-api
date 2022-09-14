@@ -26,11 +26,7 @@ app.use(cors())
 app.use(express.json())
 
 app.get("/", (req, res)=>{
-     db.select('*').from('users')
-          .then(user => {
-               res.json(user)
-          })
-          .catch(err => res.status(400).json('error getting user'))
+     res.json(user)
 })
 
 app.post("/signin", signIn.handleSignIn(db, bcrypt))
