@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt-nodejs");
 const cors = require('cors')
 const knex = require('knex')
 const register = require('./controllers/register');
-const signIn = require('./controllers/signIn');
+const login = require('./controllers/login');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 const env = process.env
@@ -29,7 +29,7 @@ app.get("/", (req, res)=>{
      res.json('Server Is running')
 })
 
-app.post("/signin", signIn.handleSignIn(db, bcrypt))
+app.post("/signin", login.handleSignIn(db, bcrypt))
 
 app.post("/register", register.handleRegister(db, bcrypt))
 
